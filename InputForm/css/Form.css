@@ -1,0 +1,108 @@
+html,
+input {
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 2em;
+}
+
+.headerContainer {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  background-color: rgb(71, 227, 255);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+div {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label,
+input,
+.btn {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+label {
+  text-align: right;
+  width: 30%;
+  margin-right: 2%;
+}
+
+input {
+  flex: auto;
+}
+
+.submit{
+  display: flex;
+  align-content: center;
+  font-style: italic;
+  background-color: green;  
+  flex-flow: column wrap;
+  width: 20%;
+  margin: 0 auto;
+
+}
+.reset{
+    display: flex;
+    align-content: center;
+    font-style: italic;
+    background-color: red;  
+    flex-flow: column wrap;
+    width: 20%;
+    margin: 0 auto;
+  }
+    
+  
+error-output {
+  font-size: 18px;
+  font-style: arial;
+  color: red;
+}
+.bg-image {
+    /* The image used */
+    background-image: url("../img/img.png");
+  
+    min-height: 380px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  label {
+    width: 30%;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 240px) {
+  label {
+    width: 30%;
+    font-size: 11px;
+  }
+  input {
+    width: 11px;
+  }
+}

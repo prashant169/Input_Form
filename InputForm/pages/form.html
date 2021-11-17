@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Input Type</title>
+    <link rel="stylesheet" href="../CSS/Form.css" />
+  </head>
+  <body class="bg-image">
+      
+    <form>
+      <header class="headerContainer">
+        <h1>INPUT FORM USING HTML AND CSS</h1>
+      </header>
+      <b><div>
+        <label for="text">Text Input Type For Name: </label>
+        <input type="text" name="text" id="text" />
+        <error-output class="text-error" for="text"></error-output>
+      </div>
+
+      <div>
+        <label for="pwd">Password Input Type: </label>
+        <input type="password" name="pwd" id="pwd" />
+        <error-output class="pwd-error" for="pwd"></error-output>
+      </div>
+
+      <div>
+        <label for="email">Email Input Type: </label>
+        <input type="email" name="email" id="email" />
+        <error-output class="email-error" for="email"></error-output>
+      </div>
+
+      <div>
+        <label for="url">URL Input Type: </label>
+        <input type="url" name="url" id="url" />
+        <error-output class="text-error" for="url"></error-output>
+      </div>
+
+      <div>
+        <label for="number">Number Input Type: </label>
+        <input type="number" name="number" id="number" />
+        <error-output class="number-error" for="number"></error-output>
+      </div>
+
+      <div>
+        <label for="tel">Telephone Input Type: </label>
+        <input type="tel" name="tel" id="tel" />
+        <error-output class="tel-error" for="tel"></error-output>
+      </div>
+
+      <div>
+        <label for="search">Search Input Type: </label>
+        <input type="search" name="search" id="search" />
+        <error-output class="text-error" for="search"></error-output>
+      </div>
+
+      <div class="nativeDateTimePicker">
+        <label for="party"> Choose Date Time </label>
+        <input type="datetime-local" name="party" id="bday" />
+        <span class="validity"></span>
+      </div>
+
+      <div>
+        <label for="salary"> Choose Salary Range </label>
+        <input
+          type="range"
+          name="salary"
+          id="salary"
+          min="350000"
+          max="500000"
+          step="100"
+          value="400000"
+        />
+        <output class="salary-output" for="salary">400000</output>
+      </div>
+      <b> <button onclick="myFunction()" class="btn submit" type="submit" value="Submit">Submit</button>
+      <button class="btn reset" type="reset" value="Reset">Reset</button></b>
+    </form>
+    <script>
+      // validate first name
+      const name = document.querySelector("#text");
+      const textError = document.querySelector(".text-error");
+      text.addEventListener("input", function () {
+        let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
+        if (nameRegex.test(name.value)) {
+          textError.textContent = "";
+        } else {
+          textError.textContent = "Name is Incorrect";
+        }
+      });
+
+      // validate email
+      const email = document.querySelector("#email");
+      const emailError = document.querySelector(".email-error");
+      email.addEventListener("input", function () {
+        let emailRegex = RegExp(
+          "^[0-9a-zA-Z]+([.,+,_,-]{1}[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2})?"
+        );
+        if (emailRegex.test(email.value)) {
+          emailError.textContent = "";
+        } else {
+          emailError.textContent = "Email is Incorrect";
+        }
+      });
+
+      //Validate Mobile Format
+      const number = document.querySelector("#tel");
+      const numberError = document.querySelector(".tel-error");
+      number.addEventListener("input", function () {
+        let phoneNumberRegex = RegExp("^[0-9]{2}[ ][0-9]{10}$");
+        if (phoneNumberRegex.test(number.value)) {
+          numberError.textContent = "";
+        } else {
+          numberError.textContent = "Phone number is incorrect";
+        }
+      });
+
+      //validate Password
+      const password = document.querySelector("#pwd");
+      const passwordEror = document.querySelector(".pwd-error");
+      password.addEventListener("input", function () {
+        let passwordRegex = RegExp(
+          "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$%^&-+@]).{8,}"
+        );
+        if (passwordRegex.test(password.value)) {
+          passwordEror.textContent = "";
+        } else {
+          passwordEror.textContent = "Password is incorrect";
+        }
+      });
+
+      const salary = document.querySelector("#salary");
+      const output = document.querySelector(".salary-output");
+      output.textContent = salary.value;
+      salary.addEventListener("input", function () {
+        output.textContent = salary.value;
+      });
+
+      function myFunction() {
+           confirm("Data Save Successfully");
+          }
+    </script>
+ 
+</body>
+</html>
